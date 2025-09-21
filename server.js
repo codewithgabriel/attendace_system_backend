@@ -4,6 +4,7 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const lectureRoutes = require('./routes/lectures');
 const attendanceRoutes = require('./routes/attendance');
+const studentRoutes = require('./routes/students');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -19,7 +20,7 @@ if (process.env.NODE_ENV === 'production') app.use(morgan('dev'));
 app.use('/api/auth', authRoutes);
 app.use('/api/lectures', lectureRoutes);
 app.use('/api/attendance', attendanceRoutes);
-
+app.use("/api/students", studentRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
