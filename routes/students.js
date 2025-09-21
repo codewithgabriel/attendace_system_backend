@@ -13,6 +13,7 @@ router.route("/")
   .post(protect, createStudent)
   .get(protect, getStudents);
 
+  
 router.route("/:id")
   .get(protect, getStudentById)
   .put(protect, updateStudent)
